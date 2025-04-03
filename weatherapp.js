@@ -49,7 +49,7 @@ function displayWeather(data){
 
     const html = `
         <h1 class="cityDisplay">${city}</h1>
-        <p class="tempDisplay">${Math.floor(temp - 273.15)}°C</p>
+        <p class="tempDisplay">${Math.round(temp - 273.15)}°C</p>
         <p class="humidityDisplay">${humidity}</p>
         <p class="emojiDisplay">${getEmoji(data)}</p>
         <p class="descDisplay">${description}</p>
