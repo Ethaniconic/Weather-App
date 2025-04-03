@@ -40,7 +40,7 @@ async function getWeatherData(city){
 
 // data - json format structure.
 function displayWeather(data){
-    // console.log(data);
+    console.log(data);
     // destructuring the data in smaller units.
     const {name: city, 
             main: {temp, humidity},
@@ -51,6 +51,7 @@ function displayWeather(data){
         <h1 class="cityDisplay">${city}</h1>
         <p class="tempDisplay">${Math.floor(temp - 273.15)}°C</p>
         <p class="humidityDisplay">${humidity}</p>
+        <p class="emojiDisplay">${getEmoji(data)}</p>
         <p class="descDisplay">${description}</p>
     `
 
@@ -61,6 +62,27 @@ function displayWeather(data){
     card.style.flexDirection = "column";
     // card.style.alignItems = "center";
     card.style.justifyContent = "center";
+}
+
+function getEmoji(data){
+    const {weather: [{id}]} = data;
+    let weatherEmoji;
+
+    if(id >= 200 && id < 300){
+        weatherEmoji = "⛈️";
+    }else if(id >= 300 && id < 600){
+        weatherEmoji = "🌧️";
+    }else if(id >= 600 && id < 700){
+        weatherEmoji = "❄️";
+    }else if(id === 800){
+        weatherEmoji = "☀️";
+    }else if(id > 800){
+        weatherEmoji = "☁️";
+    }else{
+        weatherEmoji = "❓";
+    }
+
+    return weatherEmoji;
 }
 
 function displayError(msg){
