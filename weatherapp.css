@@ -1,0 +1,59 @@
+body{
+    font-family: jetBrains mono;
+    background-color: rgb(37, 39, 37);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherForm{
+    margin: 20px;
+}
+.cityInput{
+    padding: 10px;
+    font-size: 1.6rem;
+    border: 3px solid beige;
+    border-radius: 10px;
+    margin: 10px;
+    width: 300px;
+    outline: none;
+    caret-color: lime;
+    font-family: jetbrains mono;
+    caret-shape: underscore;
+}
+
+button[type="submit"]{
+    font-weight: bold;
+    font-size: 1rem;
+    background: tomato;
+    color: white;
+    border: none;
+    padding: 20px 0;
+    margin: 10px;
+
+    cursor: pointer;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    background-color: beige;
+    color: rgb(28, 28, 28);
+    padding: 20px 40px;
+    width: 250px;
+    min-height: 30vh;
+}
+
+.card p{
+    font-size: 20px;
+}
+
+.card h1{
+    font-size: 2.5rem;
+}
